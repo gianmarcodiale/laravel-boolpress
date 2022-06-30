@@ -1,6 +1,6 @@
 <template>
   <div class="page container mt-4">
-    <div class="p-5 bg-dark">
+    <div class="p-5 bg-dark rounded-3">
       <div class="container text-white">
         <div class="d-flex gap-4">
           <div class="avatar">
@@ -17,9 +17,8 @@
           </div>
         </div>
         <hr class="my-2" />
-        <p>More info</p>
         <p class="lead">
-          <router-link class="btn btn-primary btn-lg" :to="{ name: 'posts' }"
+          <router-link class="btn btn-primary btn-lg text-white" :to="{ name: 'posts' }"
             >Read my blog</router-link
           >
         </p>

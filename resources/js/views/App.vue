@@ -37,7 +37,7 @@
     <!-- route outlet -->
     <!-- component matched by the route will render here -->
     <router-view></router-view>
-    <footer class="bg-dark text-white text-center py-3">
+    <footer class="bg-dark text-white text-center py-3 mt-3">
         &copy; GDA
     </footer>
   </div>

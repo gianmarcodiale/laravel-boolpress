@@ -52,18 +52,22 @@ export default {
       posts: "",
     };
   },
-  methods: {},
+  methods: {
+    getPosts() {
+      axios
+        .get("/api/posts/")
+        .then((response) => {
+          // console.log(response.data);
+          const posts = response.data.data;
+          this.posts = posts.slice(0, 4);
+        })
+        .catch((e) => {
+          console.error(e);
+        });
+    },
+  },
   mounted() {
-    axios
-      .get("/api/posts")
-      .then((response) => {
-        console.log(response.data);
-        const posts = response.data.data;
-        this.posts = posts.slice(0, 4);
-      })
-      .catch((e) => {
-        console.error(e);
-      });
+    this.getPosts();
   },
 };
 </script>
