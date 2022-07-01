@@ -4,6 +4,8 @@ use App\Mail\PostUpdatedAdminMessage;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Post;
+use Illuminate\Http\Request;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +21,18 @@ use App\Models\Post;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
+Route::get('/contact-form', 'Admin\MessageController@index')->name('contact.form.index');
+Route::post('/contact-form', 'Admin\MessageController@store');
+
+/**
+ * Create controller for request handling -> Insert a method for data injection
+ * Model for the message
+ * Create a table for messages
+ * Create a mailable for admin
+ * Create a mailable for user
+ * Limit access to message panel at the first site user (super-admin)
+ */
 
 Auth::routes();
 
@@ -42,6 +56,8 @@ Route::middleware('auth')
         Route::resource('tags', 'TagController')->parameters([
             'tags' => 'tag:slug'
         ])->except(['show', 'create', 'edit']);
+        // Create route for messages
+        Route::resource('messages', 'MessageController');
     });
 
 // Or we can create a route to redirect to the email that we send

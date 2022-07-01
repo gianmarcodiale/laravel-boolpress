@@ -6,7 +6,7 @@
             <div class="postCard border border-secondary rounded p-4">
                 <div class="postImage">
                     <img class="img-fluid"
-                        src="{{ $post->cover_image ? asset('storage/' . $post->cover_image) : 'https://via.placeholder.com/600x300' }}"
+                        src="{{ asset('storage/' . $post->cover_image) }}"
                         alt="">
                 </div>
                 <div class="metadata mt-4">

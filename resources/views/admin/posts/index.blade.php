@@ -28,7 +28,7 @@
                         <td scope="row">{{ $post->id }}</td>
                         <td>{{ $post->title }}</td>
                         <td>{{ $post->author }}</td>
-                        <td><img width="120" src="{{ $post->cover_image ? asset('storage/' . $post->cover_image) : 'https://via.placeholder.com/600x300' }}" alt="cover image"></td>
+                        <td><img width="120" src="{{ asset('storage/' . $post->cover_image) }}" alt=""></td>
                         <td>{{ $post->slug }}</td>
                         <td>
                             <div class="actions d-flex">

@@ -27,7 +27,8 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="input-wrapper d-flex justify-content-center w-100">
-                <input class="form-control form-control-dark w-50 rounded-3 p-2" type="text" placeholder="Search" aria-label="Search">
+                <input class="form-control form-control-dark w-50 rounded-3 p-2" type="text" placeholder="Search"
+                    aria-label="Search">
             </div>
         </header>
 
@@ -80,6 +81,17 @@
                                     </svg><span style="padding-left:0.5rem">Tags</span>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link d-flex align-items-center" href="{{ route('admin.tags.index') }}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="currentColor" class="bi bi-tags" viewBox="0 0 16 16">
+                                        <path
+                                            d="M3 2v4.586l7 7L14.586 9l-7-7H3zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586V2z" />
+                                        <path
+                                            d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1v5.086z" />
+                                    </svg><span style="padding-left:0.5rem">Messages</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </nav>
@@ -101,7 +113,8 @@
                                     {{ __('Logout') }}
                                 </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                    class="d-none">
                                     @csrf
                                 </form>
                             </div>

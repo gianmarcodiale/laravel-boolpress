@@ -105,7 +105,7 @@
         </main>
         <aside class="bg-white pt-4 col-12 col-md-3 col-lg-2">
           <h4>Categories</h4>
-          <div class="categories widget">
+          <div class="widget pt-4 categories widget">
             <ul>
               <li v-for="category in categories" :key="category.id">
                 {{ category.name }}
@@ -113,7 +113,7 @@
             </ul>
           </div>
           <h4>Tags</h4>
-          <div class="widget tags">
+          <div class="widget tags p-4">
             <ul class="list-unstyled">
               <li v-for="tag in tags" :key="tag.id">#{{ tag.name }}</li>
             </ul>
@@ -125,7 +125,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from "axios";
 import BannerComponent from "../components/BannerComponent.vue";
 export default {
   name: "Posts",

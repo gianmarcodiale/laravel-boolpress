@@ -27,7 +27,8 @@ class PostController extends Controller
         $authUser= Auth::id();
 
         // Show only the post created by the logged user
-        $posts = Post::orderByDesc('id')->where('user_id', '=', $authUser)->get();
+        $posts = Post::orderByDesc('id')->get();
+        //where('user_id', '=', $authUser)
 
         // Or we can use
         // $posts = Auth::user()->posts;
@@ -90,7 +91,7 @@ class PostController extends Controller
             ]);
             // Save the file in the file system & retrieve the file
             //ddd($request->all());
-            $image_path = Storage::put("post_images", $request->cover_image);
+            $image_path = Storage::put("images", $request->cover_image);
             //ddd($image_path);
             // Pass the array in the validated data and save
             $validated_data["cover_image"] = $image_path;
@@ -188,7 +189,7 @@ class PostController extends Controller
             Storage::delete($post->cover_image);
             // Save the file in the file system & retrieve the file
             //ddd($request->all());
-            $image_path = Storage::put("post_images", $request->cover_image);
+            $image_path = Storage::put("images", $request->cover_image);
             //ddd($image_path);
             // Pass the array in the validated data and save
             $validated_data["cover_image"] = $image_path;
